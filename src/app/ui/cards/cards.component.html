@@ -1,0 +1,14 @@
+<!-- <div class="card">
+    <img src="{{ product.thumbnail }}" class="card-img" alt={{product.title}}/>
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <button (click)="alertEvent()">Enter</button>
+    </div>
+</div> -->
+<div class="card">
+  <a (click)="goNextPage()">
+    <img src="{{item.thumbnail}}" class="card-img-top" alt="">
+    <h5 class="card-title">{{item.title}}</h5>
+  </a>
+</div>

@@ -1,0 +1,22 @@
+/* .card{
+    height: 600px;
+    width:300px;
+    padding: 8px;
+    margin:8px 8px 8px 8px;
+   
+    color: #000000;
+  }
+  
+  .card-title{
+    font-size: 24px;
+  } */
+
+  .card{
+    height: 350px;
+    background-color: #bea850;
+    margin-top: 20px;
+    color: white;
+  }
+  .card-title{
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,15 @@
+<!-- <p>viewproduct works!</p> -->
+
+<div *ngIf="item" class="product-details">
+    <h2>{{ item.title }}</h2>
+    <div class="split" style="display: flex;">
+        <img src="{{item.thumbnail}}" alt="{{ item.title }}">
+        <div class="content">
+            <p class="c1">{{ item.description }}</p>
+            <p class="c2">Price: ${{ item.price }}</p>
+            <p class="c3">Stock: {{ item.stock }}</p>
+            <p class="c4">Category: {{ item.category }}</p>
+            <app-button class="btn" text="Order" (btnClick)="emitEvent()"></app-button>
+        </div>
+    </div>
+</div>

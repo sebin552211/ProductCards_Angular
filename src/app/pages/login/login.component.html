@@ -1,0 +1,92 @@
+<!-- 
+<div class="grand">
+  <div class="parent container">
+ 
+     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        >
+      </div>
+
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" >
+        <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          aria-describedby="emailHelp"
+          formControlName="password"
+        >
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+     </form>
+  </div>
+</div> -->
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
+
+<div class="grand">
+  <div class="parent container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email Input -->
+      <div class="mb-3">
+        <label for="exampleInputEmail" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail"
+          aria-describedby="emailHelp"
+          formControlName="email"
+        >
+      </div>
+      
+      <!-- Email Validation Messages -->
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <div *ngIf="loginForm.get('email')?.errors?.['required']" class="text-danger">
+          Email is required.
+        </div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger">
+          Invalid email format.
+        </div>
+      </div>
+      
+      <!-- Password Input -->
+      <div class="mb-3">
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword"
+          formControlName="password"
+        >
+      </div>
+
+      <!-- Password Validation Messages -->
+      <div *ngIf="loginForm.get('password')?.touched">
+        <div *ngFor="let error of passwordErrors">
+          <span [class.text-success]="!loginForm.get('password')?.hasError(error.errorKey)" class="validation-msg">
+            <i [class]="loginForm.get('password')?.hasError(error.errorKey) ? 'fas fa-times-circle' : 'fas fa-check-circle'"></i>
+            {{ error.message }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>
